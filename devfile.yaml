@@ -7,6 +7,13 @@ projects:
       remotes:
         origin: https://github.com/andykrohg/quarkus-quickstarts-getting-started.git
 components:
+  - name: image-build
+    image:
+      imageName: java-quarkus-image:latest
+      dockerfile:
+        uri: src/main/docker/Dockerfile.jvm
+        buildContext: .
+        rootRequired: false
   - name: tools
     container:
       image: registry.redhat.io/devspaces/udi-rhel8@sha256:7e942155ebd808256e34a9411b85e41ae41d771353146cf6c15ed0b6bd4caacd
